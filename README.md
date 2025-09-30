@@ -1,4 +1,4 @@
-# Operating System Assignment – 1
+# Operating System Assignments
 
 **Name:** Lakshita  
 **Roll No.:** 2301420008  
@@ -6,44 +6,31 @@
 
 ---
 
-## 📄 About This Repository
-This repository contains my submission for **Assignment 1** of Operating Systems.  
-It includes **Python programs**, **Linux command outputs**, and **screenshots** for each task as a PDF file.
+# Linux Process Simulation
 
----
+This repository contains assignments that simulate core operating system concepts using Python.
 
-## 📝 Assignment Tasks
-1. **Process Creation Utility**  
-   - Python program using `os.fork()` to create N child processes.  
-   - Each child prints its PID, parent PID, and a custom message.  
-   - Parent waits for all children using `os.wait()`.
+## Assignment 1: Linux Process Management
+- **Task 1:** Create processes using `os.fork()`.
+- **Task 2:** Execute system commands with `os.execvp()`.
+- **Task 3:** Demonstrate zombie and orphan processes.
+- **Task 4:** Inspect process details from `/proc/[pid]`.
+- **Task 5:** Assign process priorities using `os.nice()`.
 
-2. **Command Execution Using exec()**  
-   - Modified Task 1 so that each child executes a Linux command  
-     using `os.execvp()` or `subprocess.run()`.
+## Assignment 2: System Startup Simulation
+- Simulates a simplified system startup using the `multiprocessing` and `logging` modules.
+- Creates multiple child processes, runs dummy tasks, and logs lifecycle events.
+- Generates a log file: `process_log.txt`.
 
-3. **Zombie & Orphan Processes**  
-   - Demonstration of a zombie process (skipping `wait()` in parent).  
-   - Demonstration of an orphan process (parent exits before child finishes).  
-   - Verified using `ps -el | grep defunct`.
+## Tools Used
+- Python 3.x  
+- `os`, `subprocess`, `multiprocessing`, `time`, `logging`  
 
-4. **Inspecting Process Info from /proc**  
-   - Reads process details (name, state, memory usage)  
-     from `/proc/[pid]/status`.  
-   - Prints executable path from `/proc/[pid]/exe`.  
-   - Lists open file descriptors from `/proc/[pid]/fd`.
+## How to Run
+```bash
+# Example: Run startup simulation
+python3 startup_simulation.py
 
-5. **Process Prioritization**  
-   - Created multiple CPU-intensive processes.  
-   - Assigned different `nice()` values and observed scheduler behavior.
+# Check generated log
+cat process_log.txt
 
----
-
-## 📂 Files in This Repository
-- **`2301420008_Assignment1(OS).pdf`** → Contains **screenshots of code & outputs** for all tasks.  
-
----
-
-## 🔗 How to View
-Click on the PDF file above in GitHub to preview it directly in your browser,  
-or download it to view offline.
