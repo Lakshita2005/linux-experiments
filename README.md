@@ -34,3 +34,34 @@ python3 startup_simulation.py
 # Check generated log
 cat process_log.txt
 
+### Assignment 3: Scheduling  
+Implements CPU scheduling algorithms in Python.  
+
+**Algorithms Implemented:**  
+- **First Come First Serve (FCFS):** Processes are scheduled in the order they arrive.  
+- **Shortest Job First (SJF):** Process with the shortest burst time is scheduled first.  
+- **Round Robin (RR):** Each process gets a fixed time quantum in cyclic order.  
+
+**Metrics Calculated:**  
+- Waiting Time  
+- Turnaround Time  
+- Average Waiting Time  
+- Average Turnaround Time  
+
+**Comparison:**  
+- **SJF** usually gives the **lowest average waiting and turnaround time** but may cause starvation of long processes.  
+- **FCFS** is simple but can lead to the **convoy effect** if a long job arrives first.  
+- **Round Robin** ensures **fairness** (all processes get CPU time), but performance depends on the **time quantum** chosen.  
+
+**How to Run:**  
+```bash
+# Run First Come First Serve
+python3 fcfs.py
+
+# Run Shortest Job First
+python3 sjf.py
+
+# Run Round Robin (with user-defined quantum)
+python3 round_robin.py
+
+
