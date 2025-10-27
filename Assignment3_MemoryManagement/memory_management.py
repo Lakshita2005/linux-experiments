@@ -1,6 +1,6 @@
 # memory_management.py
 # Lakshita - 2301420008
-# Assignment 4: MFT and MVT Memory Management Simulation
+# Assignment 3: MFT and MVT Memory Management Simulation
 
 def mft(total_memory, partition_size, process_sizes):
     partitions = total_memory // partition_size
