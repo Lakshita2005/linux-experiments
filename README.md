@@ -49,7 +49,25 @@ Implements **CPU scheduling algorithms** in Python.
 ### Comparison
 - **SJF:** Gives the lowest average waiting and turnaround time, but may cause starvation of long processes.  
 - **FCFS:** Simple but can lead to the convoy effect if a long job arrives first.  
-- **Round Robin:** Ensures fairness (all processes get CPU time), but performance depends on the time quantum chosen.  
+- **Round Robin:** Ensures fairness (all processes get CPU time), but performance depends on the time quantum chosen.
+
+  ## Assignment 3: Memory Allocation Strategies
+
+Simulates different memory allocation strategies in an operating system.
+
+### Algorithms Implemented
+- **First Fit:** Allocates the first block that is large enough for the process.
+- **Best Fit:** Allocates the smallest block that is large enough to minimize waste.
+- **Worst Fit:** Allocates the largest available block to reduce future fragmentation.
+
+### Metrics Observed
+- Process allocation success or failure.
+- Block utilization after allocation.
+
+### How to Run
+```bash
+python3 memory_allocation.py
+
 
 ---
 
