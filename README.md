@@ -1,99 +1,188 @@
-# Operating System Assignments
+🖥️ Operating System Assignments (Linux Process Simulation)
 
-**Name:** Lakshita  
-**Roll No.:** 2301420008  
-**Course:** BTech CSE (DS)
+Name: Lakshita
+Roll No.: 2301420008
+Course: BTech CSE (DS)
 
----
+This repository contains Python and shell-based assignments that simulate core Operating System concepts such as process management, scheduling, memory allocation, system startup, IPC, and virtual machine detection.
 
-## 📌 Linux Process Simulation
+📌 Assignment 1: Linux Process Management
+Tasks
 
-This repository contains assignments that simulate core operating system concepts using Python.
+Create processes using os.fork()
 
----
+Execute system commands using os.execvp()
 
-## **Assignment 1: Linux Process Management**
+Demonstrate zombie and orphan processes
 
-### Tasks
-1. **Create processes** using `os.fork()`.  
-2. **Execute system commands** with `os.execvp()`.  
-3. **Demonstrate** zombie and orphan processes.  
-4. **Inspect process details** from `/proc/[pid]`.  
-5. **Assign process priorities** using `os.nice()`.  
+Inspect process details from /proc/[pid]
 
----
+Assign process priorities using os.nice()
 
-## **Assignment 2: System Startup Simulation**
+📌 Assignment 2: System Startup Simulation
+Description
 
-- Simulates a simplified system startup using the `multiprocessing` and `logging` modules.  
-- Creates multiple child processes, runs dummy tasks, and logs lifecycle events.  
-- Generates a log file: **`process_log.txt`**.  
+Simulates a simplified Linux system startup using Python.
 
----
+Features
 
-## **Assignment 3: Scheduling**
+Uses multiprocessing to create multiple child processes
 
-Implements **CPU scheduling algorithms** in Python.
+Executes dummy startup tasks
 
-### Algorithms Implemented
-- **First Come First Serve (FCFS):** Processes are scheduled in the order they arrive.  
-- **Shortest Job First (SJF):** Process with the shortest burst time is scheduled first.  
-- **Round Robin (RR):** Each process gets a fixed time quantum in cyclic order.  
+Logs process lifecycle events (start & end)
 
-### Metrics Calculated
-- **Waiting Time**  
-- **Turnaround Time**  
-- **Average Waiting Time**  
-- **Average Turnaround Time**  
+Generates a log file
 
-### Comparison
-- **SJF:** Gives the lowest average waiting and turnaround time, but may cause starvation of long processes.  
-- **FCFS:** Simple but can lead to the convoy effect if a long job arrives first.  
-- **Round Robin:** Ensures fairness (all processes get CPU time), but performance depends on the time quantum chosen.
+Output
 
-  ## Assignment 3: Memory Allocation Strategies
+process_log.txt
 
-Simulates different memory allocation strategies in an operating system.
+📌 Assignment 3: CPU Scheduling & Memory Allocation
+🔹 Part A: CPU Scheduling Algorithms
+Algorithms Implemented
 
-### Algorithms Implemented
-- **First Fit:** Allocates the first block that is large enough for the process.
-- **Best Fit:** Allocates the smallest block that is large enough to minimize waste.
-- **Worst Fit:** Allocates the largest available block to reduce future fragmentation.
+First Come First Serve (FCFS)
 
-### Metrics Observed
-- Process allocation success or failure.
-- Block utilization after allocation.
+Shortest Job First (SJF)
 
-### How to Run
-```bash
-python3 memory_allocation.py
+Round Robin (RR)
 
+Metrics Calculated
 
----
+Waiting Time
 
-## ⚙️ Tools Used
-- **Python 3.x**  
-- Modules: `os`, `subprocess`, `multiprocessing`, `time`, `logging`  
+Turnaround Time
 
----
+Average Waiting Time
 
-## 🚀 How to Run
+Average Turnaround Time
 
-```bash
+Comparison
+
+SJF: Lowest average waiting & turnaround time, but may cause starvation
+
+FCFS: Simple, but suffers from convoy effect
+
+Round Robin: Fair scheduling, performance depends on time quantum
+
+🔹 Part B: Memory Allocation Strategies
+Algorithms Implemented
+
+First Fit
+
+Best Fit
+
+Worst Fit
+
+Metrics Observed
+
+Process allocation success/failure
+
+Memory block utilization after allocation
+
+📌 Assignment 4: System-Level Operations & IPC
+🔹 Task 1: Batch Processing Simulation (Python)
+
+Executes multiple .py files sequentially
+
+Mimics batch processing in an operating system
+
+🔹 Task 2: System Startup and Logging
+
+Simulates system startup using Python
+
+Creates multiple processes
+
+Logs process start and end times into a log file
+
+🔹 Task 3: System Calls and Inter-Process Communication (IPC)
+Implementations
+
+ipc_pipe_fork.py
+
+Uses os.pipe() and os.fork()
+
+Parent and child communicate via an anonymous pipe
+
+exec_with_pipe.py
+
+Parent creates a pipe and forks
+
+Child executes a command using os.execvp() (e.g., grep or cat)
+
+Parent writes data into the pipe
+
+Concepts Used
+
+fork()
+
+exec()
+
+wait()
+
+Pipes for IPC
+
+🔹 Task 4: VM Detection and Shell Interaction
+Shell Script
+
+Prints system details such as:
+
+OS type
+
+Kernel version
+
+CPU information
+
+Memory details
+
+Python Script (detect_vm.py)
+
+Detects whether the system is running inside a Virtual Machine
+
+Uses system-level checks and hardware indicators
+
+⚙️ Tools Used
+
+Python 3.x
+
+Linux Shell
+
+Python Modules:
+
+os
+
+subprocess
+
+multiprocessing
+
+time
+
+logging
+
+🚀 How to Run
 # Assignment 1: Linux Process Management
 python3 process_management.py
 
 # Assignment 2: System Startup Simulation
 python3 startup_simulation.py
-cat process_log.txt   # View generated log file
+cat process_log.txt
 
-# Assignment 3: Scheduling
-
-# Run First Come First Serve
+# Assignment 3: Scheduling Algorithms
 python3 fcfs.py
-
-# Run Shortest Job First
 python3 sjf.py
-
-# Run Round Robin (with user-defined quantum)
 python3 round_robin.py
+
+# Assignment 3: Memory Allocation
+python3 memory_allocation.py
+
+# Assignment 4: Batch Processing
+python3 batch_processing.py
+
+# Assignment 4: IPC using Pipes
+python3 ipc_pipe_fork.py
+python3 exec_with_pipe.py
+
+# Assignment 4: VM Detection
+bash system_info.sh
+python3 detect_vm.py
